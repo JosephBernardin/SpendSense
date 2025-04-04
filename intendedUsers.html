@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendSense</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding-top: 8rem;
+        }
+        .navbar {
+            background-color: #28a745;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            margin-left: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar-nav .nav-link:hover {
+            color: white ;
+            transform: scale(1.1);
+        }
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        section:nth-child(even) {
+            background-color: #fafafa;
+        }
+        section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #343a40;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        img {
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+        /* Animation for fade-in effect */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SpendSense</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visionStatement.html">Vision Statement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="intendedUsers.html">Intended Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="postMortem.html">Post Mortem</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-dark" href="https://code.cs.umanitoba.ca/comp3350-winter2025/a01-g05-ctrl-alt-invest" target="_blank">
+                        <i class="fab fa-github"></i> GitLab</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <h2 class="section-title">Intended Users</h2>
+    </div>
+    <!-- <section class="class=" fade-in id="intendedUsers"> -->
+
+        <!-- Students Section -->
+        <section id="students" class="my-5">
+            <div class="text-center">
+                <h3>Students</h3>
+                <img src="Student.png" alt="student" width="200" height="200">
+            </div>
+            <div class="text-start">
+                <p>Students have many things to keep track of like tests, homework, commuting, and more. Let’s not make money one of them. With SpendSense, students can:</p>
+                <ul>
+                    <li>Track income</li>
+                    <li>Track spending</li>
+                    <li>Save up for their tuition</li>
+                </ul>
+                <p>With SpendSense keeping track of their financials, students can keep their focus on their studies.</p>
+            </div>
+        </section>
+
+        <!-- Avid Shoppers Section -->
+        <section id="avidShoppers" class="my-5">
+            <div class="text-center">
+                <h3>Avid Shoppers / High Spenders</h3>
+                <img src="HighSpender.png" alt="high spender" width="200" height="200">
+            </div>
+            <div class="text-start">
+                <p>Avid Shoppers and high spenders see what they want and buy what they want. Buying frequently and expensively. They can use SpendSense to:</p>
+                <ul>
+                    <li>Track and monitor spending habits</li>
+                    <li>Prevent overspending</li>
+                </ul>
+                <p>SpendSense assists avid shoppers and high spenders in their frequent spendings and reminds them that even their wallets need a break.</p>
+            </div>
+        </section>
+
+        <!-- Average Adults Section -->
+        <section id="averageAdult" class="my-5">
+            <div class="text-center">
+                <h3>Average Adults</h3>
+                <img src="AvgJoe.png" alt="average joe" width="200" height="200">
+            </div>
+            <div class="text-start">
+                <p>The average adults have many important expenses and things to save for. SpendSense is here to help. Adults can use SpendSense to:</p>
+                <ul>
+                    <li>Track income and expenses</li>
+                    <li>Create saving goals for future investments</li>
+                </ul>
+                <p>SpendSense helps the average adult make the overwhelming part of adulting—finances—simple.</p>
+            </div>
+        </section>
+    <!-- </section> -->
+
+    <footer class="fade-in">
+        &copy; COMP 3350 | Group 5: CTRL + ALT + INVEST | All Rights Reserved
+    </footer>
+</body>
+</html>

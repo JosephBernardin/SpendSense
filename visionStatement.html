@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SpendSense</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 5rem;
+        }
+        .navbar {
+            background-color: #28a745;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            margin-left: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar-nav .nav-link:hover {
+            color: white ;
+            transform: scale(1.1);
+        }
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #343a40;
+        }
+        .card {
+            border: none;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-body {
+            padding: 30px;
+        }
+        footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+        }
+        /* Animation on load */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SpendSense</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visionStatement.html">Vision Statement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="intendedUsers.html">Intended Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="postMortem.html">Post Mortem</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-dark" href="https://code.cs.umanitoba.ca/comp3350-winter2025/a01-g05-ctrl-alt-invest" target="_blank">
+                        <i class="fab fa-github"></i> GitLab</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vision Statement Section -->
+    <section class="container mt-5 fade-in">
+        <h2 class="section-title">Vision Statement</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card p-4">
+                    <p>
+                        SpendSense is an easy-to-use personal finance tracker that will help people efficiently manage their finances by tracking: their income, spending and savings goals. 
+                    </p>
+                    <p>
+                        SpendSense offers users many tools that make managing their finances more intuitive. With SpendSense users will be able to create and track savings goals. It will also provide a way to track and manage many forms of financial exchange, such as income, expenses. Tracked financials will be conveniently grouped and seen in lists. Users will be able to delete any kind of financials they no longer want to track, anytime they want.
+                    </p>
+                    <p>
+                        The target audience includes a wide variety of groups: students, avid shoppers, high spenders, and average adults who want to keep track of their finances. SpendSense is an ideal solution for students looking to manage their finances effectively around their tuition, by allowing them to track and manage both income and expenses. SpendSense will also help avid shoppers and high spenders track all their shopping with expense tracking. SpendSense will also enable adults to organize their expenses into convenient lists. Whether it’s for daily spending or saving for the future, SpendSense provides a simple yet powerful all-in-one tool for anyone looking to manage their finances easier and better. 
+                    </p>
+                    <p>
+                        The values and principles of SpendSense is in the financial aid and teaching it provides. SpendSense will provide people with a sense of awareness of their current financial situation, like knowing which expense is taking the most money out of their wallets. SpendSense also supports users through insights into their spending habits, telling users if they can spend more or less on certain expenses. All finances are shown and grouped by the kind of transaction they are in simple lists making all finances organized.
+                    </p>
+                    <p>
+                        What sets SpendSense apart is its focus on flexibility and inclusivity. Unlike many existing personal finance apps that are designed with the assumption of fixed paychecks, SpendSense can help users with changing income, offering a solution that meets the challenges of financial changes. This feature, combined with a simple and easy-to-use interface, makes SpendSense uniquely positioned to address gaps in the personal finance app market.
+                    </p>
+                    <p>
+                        Success will be defined by the popularity of SpendSense with it's users. The vision of success for SpendSense can be measured using the following two outcomes, after three months. Firstly, by keeping 80% of total users since app's release. Second, the app receives at least an average of four stars on the app store. SpendSense will be considered a success if it can meet both targets specified above.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        &copy; COMP 3350 | Group 5: CTRL + ALT + INVEST | All Rights Reserved
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

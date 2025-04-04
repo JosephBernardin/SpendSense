@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendSense</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 5rem;
+        }
+        .navbar {
+            background-color: #28a745;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            margin-left: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar-nav .nav-link:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+        .feature-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .feature-description {
+            flex: 1;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature-video-container {
+            width: 300px;
+        }
+        .vertical-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature-btn {
+            background: white;
+            color: #28a745;
+            padding: 15px;
+            border: 3px solid #28a745;
+            cursor: pointer;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            width: 100%;
+            margin-bottom: 15px;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature-btn:hover, .feature-btn.active {
+            background: #28a745;
+            color: white;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        .feature-btn:active {
+            transform: translateY(-2px) scale(1.01);
+        }
+        .feature-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .feature-btn:hover::after {
+            opacity: 1;
+        }
+        .feature-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+        }
+        @media (max-width: 992px) {
+            .feature-container {
+                flex-direction: column;
+            }
+            .feature-video-container {
+                width: 100%;
+            }
+            .vertical-video {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SpendSense</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visionStatement.html">Vision Statement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="intendedUsers.html">Intended Users</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="features.html">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="postMortem.html">Post Mortem</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-dark" href="https://code.cs.umanitoba.ca/comp3350-winter2025/a01-g05-ctrl-alt-invest" target="_blank">
+                        <i class="fab fa-github"></i> GitLab</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Features Section -->
+    <section class="container mt-5">
+        <h2 class="text-center mb-5">Key Features</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <button class="feature-btn active" onclick="showFeature('login', this)">Login</button>
+                <button class="feature-btn" onclick="showFeature('income-tracking', this)">Income Tracking</button>
+                <button class="feature-btn" onclick="showFeature('expense-tracking', this)">Expense Tracking</button>
+                <button class="feature-btn" onclick="showFeature('savings-goal', this)">Savings Goals</button>
+            </div>
+            <div class="col-lg-8">
+                <div id="login" class="feature-content" style="display: block;">
+                    <div class="feature-container">
+                        <div class="feature-description">
+                            <h3>Login</h3>
+                            <p>Secure access to your personal finance dashboard with our intuitive login system.</p>
+                            <ul>
+                                <li>Secure authentication</li>
+                                <li>Quick access to your data</li>
+                                <li>Multi-device synchronization</li>
+                            </ul>
+                        </div>
+                        <div class="feature-video-container">
+                            <video class="vertical-video" controls>
+                                <source src="Login-Music.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="income-tracking" class="feature-content">
+                    <div class="feature-container">
+                        <div class="feature-description">
+                            <h3>Income Tracking</h3>
+                            <p>Monitor and categorize your sources of income with ease. Get a clear picture of your earnings and financial inflows.</p>
+                            <ul>
+                                <li>Track multiple income sources</li>
+                                <li>Customizable categorization</li>
+                                <li>Visual income reports</li>
+                            </ul>
+                        </div>
+                        <div class="feature-video-container">
+                            <video class="vertical-video" controls>
+                                <source src="Income-Music.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="expense-tracking" class="feature-content">
+                    <div class="feature-container">
+                        <div class="feature-description">
+                            <h3>Expense Tracking</h3>
+                            <p>Keep a close eye on your spending habits and manage your budget efficiently.</p>
+                            <ul>
+                                <li>Real-time expense logging</li>
+                                <li>Customizable categories</li>
+                                <li>Add and Delete expenses</li>
+                                <li>Spending alerts</li>
+                            </ul>
+                        </div>
+                        <div class="feature-video-container">
+                            <video class="vertical-video" controls>
+                                <source src="Expenses-Music.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="savings-goal" class="feature-content">
+                    <div class="feature-container">
+                        <div class="feature-description">
+                            <h3>Savings Goal Creation</h3>
+                            <p>Set and track your savings goals to achieve financial success.</p>
+                            <ul>
+                                <li>Custom savings targets</li>
+                                <li>Progress tracking</li>
+                                <li>Add and Deleting goals</li>
+                                <li>Visual progress indicators</li>
+                            </ul>
+                        </div>
+                        <div class="feature-video-container">
+                            <video class="vertical-video" controls>
+                                <source src="Goals-Music.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        &copy; COMP 3350 | Group 5: CTRL + ALT + INVEST | All Rights Reserved
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showFeature(featureId, button) {
+            // Pause all playing videos
+            document.querySelectorAll('video').forEach(video => {
+                video.pause();
+            });
+
+            // Hide all feature content
+            document.querySelectorAll('.feature-content').forEach(desc => desc.style.display = 'none');
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.feature-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Show selected feature and activate button
+            document.getElementById(featureId).style.display = 'block';
+            button.classList.add('active');
+        }
+    </script>
+</body>
+</html>
